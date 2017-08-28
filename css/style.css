@@ -19,9 +19,13 @@ footer{
   padding-top: 15px;
   padding-bottom: 15px;
   font-size: 11pt;
+  text-align: center;
 }
 h1, h2{
   font-weight: bold;
+}
+footer a:link, a:visited, a:hover{
+  color: #AAA;
 }
 .bg-colour{
   background-color: #000;
@@ -37,13 +41,22 @@ h1, h2{
   text-align: center;
   padding: 5px;
 }
+.light{
+  color: #FFF;
+}
 #home-header{
-  background-image: url(header.JPG);
+  background-image: url("/images/home-header.JPG");
   background-attachment: fixed;
   background-position: 0px -1000px;
   background-size: 4000px;
   height: 250px;
-  animation: fadein 5s;
+}
+#about-header{
+  background-image: url("/images/about-header.jpg");
+  background-attachment: fixed;
+  background-position: center -1500px;
+  background-size: 4000px;
+  height: 250px;
 }
 #header-content{
   padding-top: 100px;
@@ -54,14 +67,5 @@ h1, h2{
   width: 100%;
   max-width: 250px;
   margin: auto;
-  animation: fadein 5s;
   padding: 5px;
-}
-@keyframes fadein{
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
 }
