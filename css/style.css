@@ -33,6 +33,14 @@ footer a:link, a:visited, a:hover{
 .content{
   padding-top: 25px;
 }
+.caption-dark{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  opacity: 0.7;
+}
 .text-heading{
   text-align: center;
   padding: 50px;
@@ -58,10 +66,16 @@ footer a:link, a:visited, a:hover{
   background-size: 4000px;
   height: 250px;
 }
+#projects-header{
+  background-image: url("/images/291robotcar.JPG");
+  background-attachment: fixed;
+  background-position: center -1200px;
+  background-size: 4000px;
+  height: 250px;
+}
 #header-content{
   padding-top: 100px;
 }
-
 #personal-pic{
   display: block;
   width: 100%;
