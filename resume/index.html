@@ -14,6 +14,7 @@
 
     <!-- Extra CSS -->
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/resume.css">
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -45,14 +46,285 @@
     <!-- Page header -->
     <div class="container-fluid" id="resume-header">
       <div class="container" id="header-content">
-        <h1>My work and project experience.</h1>
+        <h1>My experience.</h1>
       </div>
     </div>
     <!-- Main body content -->
     <div class="container content">
-      <p><i>Coming soon!</i></p>
-    </div>
+      <div id="resume-info">
+          <h3 class="resume-name">Eric Duong</h3>
+          <p class="resume-contact">Address hidden<br/>Phone number hidden</p>
+      </div>
+      <div id="accordion" role="tablist">
+        <div class="card">
+          <div class="card-header" role="tab" id="headingOne">
+            <h5 class="mb-0">
+              <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Technical Skills
+              </a>
+            </h5>
+          </div>
 
+          <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-3">
+                  <h5 class="resume-title">Software</h5>
+                  <ul>
+                    <li>C/Java/Python</li>
+                    <li>LAMP stack</li>
+                    <li>Javascript</li>
+                    <li>Unit test cases</li>
+                    <li>Windows/Linux</li>
+                  </ul>
+                </div>
+                <div class="col-lg-3">
+                  <h5 class="resume-title">Hardware</h5>
+                  <ul>
+                    <li>Verilog</li>
+                    <li>Assembly</li>
+                    <li>FPGA design</li>
+                    <li>Writing testbenches</li>
+                  </ul>
+                </div>
+                <div class="col-lg-3">
+                  <h5 class="resume-title">Electrical</h5>
+                  <ul>
+                    <li>Oscilloscope</li>
+                    <li>Soldering iron</li>
+                    <li>Digital multimeter</li>
+                    <li>Wiring tools</li>
+                  </ul>
+                </div>
+                <div class="col-lg-3">
+                  <h5 class="resume-title">Programs</h5>
+                  <ul>
+                    <li>Git/GitHub</li>
+                    <li>Arduino IDE</li>
+                    <li>Eclipse</li>
+                    <li>Visual Studio</li>
+                    <li>Atom</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" role="tab" id="headingTwo">
+            <h5 class="mb-0">
+              <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Technical Projects
+              </a>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+              <div class="resume-item">
+                <div class="row">
+                  <div class="col-8">
+                    <h5 class="resume-title">UBC Rocket Student Engineering Design Team</h5>
+                  </div>
+                  <div class="col-4 right">
+                    <h5>Sept. 2016 - present</h5>
+                  </div>
+                </div>
+                <ul>
+                  <li>Researched and developed a parachute deployment system to ensure the safe return of a 4 kg payload by using a multimeter
+                    to measure current through a nichrome wire, verifying that nichrome is effective at cutting through nylon webbing</li>
+                  <li>Soldered various PCB components together and thoroughly tested the boards in a vacuum chamber to simulate parachute deployment during descent,
+                    resulting in a successful flight at the 2017 Spaceport America Cup and a first-place finish in the 10,000 ft commercial-off-the-shelf category</li>
+                  <li>Currently developing telemetry software which will display live flight data on a computer, including location on a map</li>
+                </ul>
+              </div>
+              <div class="resume-item">
+                <div class="row">
+                  <div class="col-8">
+                    <h5 class="resume-title"><i>Takeoff</i> - Music Maker</h5>
+                  </div>
+                  <div class="col-4 right">
+                    <h5>Mar. 2017</h5>
+                  </div>
+                </div>
+                <ul>
+                  <li>Emulated a pair of drum sticks by using two accelerometers, radio frequency, and a serial connection to communicate between two Arduinos and a Raspberry Pi computer</li>
+                  <li>Integrated the Arduino, a LAMP-based web interface and a Python script to play the sound of the user’s choice through speakers</li>
+                  <li>Mitigated false-positive drum hit responses by using an oscilloscope to visualize the radio frequency being sent out by the Arduino and adjusting the code</li>
+                  <li>Created a dynamic user creation form using jQuery and JavaScript which tells users whether or not the selected username and password meets requirements without having to submit the form first,
+                    reducing the amount of time the user has to wait for a page to load and having to retype their data</li>
+                  <li>Used GitHub to protect working versions of old code and to collaborate with teammates</li>
+                </ul>
+              </div>
+              <div class="resume-item">
+                <div class="row">
+                  <div class="col-8">
+                    <h5 class="resume-title">Multifunction Robot Car</h5>
+                  </div>
+                  <div class="col-4 right">
+                    <h5>Feb. 2017 - Mar. 2017</h5>
+                  </div>
+                </div>
+                <ul>
+                  <li>Integrated a servo motor, reflective optical sensors, a HC-SR04 sensor to allow the car to have multiple functions, with information on its mode displayed on an LCD display</li>
+                  <li>Used a keypad to control whether the car moves forward, backward, turns left or right, or stop</li>
+                  <li>Modularized the Arduino code which made debugging easier, resulting in the car performing more smoothly and consistently in every run</li>
+                  <li>Applied hall-effect sensors to ensure that the motors turned at an even pace, resulting in the car moving in a straighter line</li>
+                </ul>
+              </div>
+              <div class="resume-item">
+                <div class="row">
+                  <div class="col-8">
+                    <h5 class="resume-title">Animal AI</h5>
+                  </div>
+                  <div class="col-4 right">
+                    <h5>Nov. 2016</h5>
+                  </div>
+                </div>
+                <ul>
+                  <li>Simulated a world of rabbits and foxes in Java by using threads to create and destroy animals by eating or breeding</li>
+                  <li>Scanned nearby tiles of each thread and determined an action for the thread based on the presence of food, predators and its energy</li>
+                  <li>Simplified code by using classes and subclasses, reducing the amount of redundant code</li>
+                </ul>
+              </div>
+              <div class="resume-item">
+                <div class="row">
+                  <div class="col-8">
+                    <h5 class="resume-title">Simple RISC Machine</h5>
+                  </div>
+                  <div class="col-4 right">
+                    <h5>Oct. 2016</h5>
+                  </div>
+                </div>
+                <ul>
+                  <li>Used Verilog in Quartus to build a simple RISC machine with an ALU that could perform basic ARM Assembly operations on an Altera DE1-SoC</li>
+                  <li>Modularized each module and developed a testbench to extensively check test inputs, allowing for easier debugging</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" role="tab" id="headingThree">
+            <h5 class="mb-0">
+              <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Work experience
+              </a>
+            </h5>
+          </div>
+          <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+              <div class="resume-item">
+                <div class="row">
+                  <div class="col-8">
+                    <h5 class="resume-title">University of British Columbia (Vancouver, BC)</h5>
+                  </div>
+                  <div class="col-4 right">
+                    <h5>Sept. 2017 - present</h5>
+                  </div>
+                </div>
+                <h5>Undergraduate Teaching Assistant</h5>
+              </div>
+              <div class="resume-item">
+                <div class="row">
+                  <div class="col-8">
+                    <h5 class="resume-title">Save-On-Foods (Vancouver, BC)</h5>
+                  </div>
+                  <div class="col-4 right">
+                    <h5>Jul. 2015 - Sept. 2016</h5>
+                  </div>
+                </div>
+                <h5>Grocery Clerk</h5>
+                <ul>
+                  <li>Greeted up to 30 customers per hour in a friendly manner, and helped with them their shopping by scanning and bagging items in a
+                    quick and organized manner so that they are satisfied with their shopping experience</li>
+                  <li>Operated a cash register quickly and accurately to ensure transactions were completed within two minutes and that the correct change was delivered</li>
+                  <li>Stocked up to 70 pieces per hour onto shelves in an organized and tidy manner to ensure that items were well stocked and available for customers to purchase</li>
+                  <li>Answered customers’ questions on products using clear communication, and helped them locate items on shelves within a minute</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" role="tab" id="headingFour">
+            <h5 class="mb-0">
+              <a class="collapsed" data-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Volunteer experience
+              </a>
+            </h5>
+          </div>
+          <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour" data-parent="#accordion">
+            <div class="card-body">
+              <div class="resume-item">
+                <div class="row">
+                  <div class="col-8">
+                    <h5 class="resume-title">Vancouver Chinatown BIA (Vancouver, BC)</h5>
+                  </div>
+                  <div class="col-4 right">
+                    <h5>Aug. 2013 - Aug. 2015</h5>
+                  </div>
+                </div>
+                <h5>Chinatown Festival Volunteer</h5>
+                <ul>
+                  <li>Assisted tour guides by cooperating with nearby businesses using clear verbal communication that a tour will be visiting within minutes, which allowed
+                    adequate time for food samples to be prepared</li>
+                  <li>Amazed visitors by demonstrating and explaining in English and Cantonese how the Chinese spouting bowl worked, and allowed guests to try the bowl</li>
+                </ul>
+              </div>
+              <div class="resume-item">
+                <div class="row">
+                  <div class="col-8">
+                    <h5 class="resume-title">Steve Nash Fitness World (Vancouver, BC)</h5>
+                  </div>
+                  <div class="col-4 right">
+                    <h5>Sept. 2012 - Nov. 2012</h5>
+                  </div>
+                </div>
+                <h5>Front Desk Volunteer</h5>
+                <ul>
+                  <li>Entered all completed front desk transactions quickly and accurately using Microsoft Excel</li>
+                  <li>Maintained the cleanliness of the gym by picking up any loose towels from the floor and locker room every hou</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" role="tab" id="headingFive">
+            <h5 class="mb-0">
+              <a class="collapsed" data-toggle="collapse" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                Education
+              </a>
+            </h5>
+          </div>
+          <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive" data-parent="#accordion">
+            <div class="card-body">
+              <div class="resume-item">
+                <div class="row">
+                  <div class="col-8">
+                    <h5 class="resume-title">University of British Columbia</h5>
+                  </div>
+                  <div class="col-4 right">
+                    <h5>Sept. 2015 - May 2020</h5>
+                  </div>
+                </div>
+                <p>Bachelor of Applied Science, Computer Engineering</p>
+              </div>
+              <div class="resume-item">
+                <div class="row">
+                  <div class="col-8">
+                    <h5 class="resume-title">Simon Fraser University</h5>
+                  </div>
+                  <div class="col-4 right">
+                    <h5>Sept. 2014 - Apr. 2015</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Footer -->
     <footer>
       <div class="container">

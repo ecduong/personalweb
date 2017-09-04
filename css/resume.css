@@ -1,0 +1,17 @@
+.resume-item{
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.resume-title{
+  font-weight: bold;
+}
+.resume-name{
+  text-align: center;
+  font-weight: bold;
+}
+.resume-contact{
+  text-align: center;
+}
+.right{
+  text-align: right;
+}
