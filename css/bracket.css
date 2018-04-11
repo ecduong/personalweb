@@ -1,0 +1,121 @@
+/*
+ *  Flex Layout Specifics
+ */
+div#tournament{
+  display:flex;
+  flex-direction:row;
+  overflow-x: auto;
+}
+
+.round{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  list-style:none;
+  padding:0;
+  white-space: nowrap;
+  min-width: 130px;
+  width: 12.5%
+}
+
+.round .spacer{ flex-grow:1; }
+.round .spacer:first-child,
+.round .spacer:last-child{ flex-grow:.5; }
+
+.round .game-spacer-left{
+  flex-grow:1;
+}
+
+.game-spacer-right{
+  flex-grow:1;
+}
+
+/*
+ *  General Styles
+ */
+
+li.game{
+  padding-left:10px;
+  padding-right:10px;
+  color: #555;
+}
+
+li.game.winner{
+  color: #000;
+}
+
+li.game.loser{
+  color: #AAA;
+}
+
+li.game span{
+  float:right;
+  margin-right:5px;
+}
+
+li.game-top{ 
+  border-bottom:1px solid #aaa;
+  font-size: 12pt;
+}
+
+li.game-spacer-left{ 
+  border-right:1px solid #aaa;
+  min-height:40px;
+}
+
+li.game-spacer-right{ 
+  border-left:1px solid #aaa;
+  min-height:40px;
+}
+
+li.game-bottom{ 
+  border-top:1px solid #aaa;
+  font-size: 12pt;
+}
+
+li.west{
+	text-align: left;
+}
+
+li.east{
+	text-align: right;
+}
+
+h4{
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+
+.bracket-dropdown{
+	width: 200px;
+}
+
+.bracket-dropdown select{
+	font-family: inherit;
+	background-color: transparent;
+	color: #000;
+	border-radius: 5px;
+}
+
+select option{
+	background-color: #FFF;
+	color: #000;
+	font-family: inherit;
+}
+
+.logo{
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	margin: 2px;
+}
+
+.logo-img{
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.img-loser{
+	opacity: 0.5;
+}

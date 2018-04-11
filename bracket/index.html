@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bracket Challenge - Eric Duong</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Custom font -->
+    <link href="https://fonts.googleapis.com/css?family=Catamaran" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+    <!-- Extra CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/resume.css">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+	
+	<!-- Firebase initialization -->
+	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+		apiKey: "AIzaSyCdCj-es7NNyeIVoVa4x-xRXgyWUmx-wss",
+		authDomain: "playoff-brackets.firebaseapp.com",
+		databaseURL: "https://playoff-brackets.firebaseio.com",
+		projectId: "playoff-brackets",
+		storageBucket: "playoff-brackets.appspot.com",
+		messagingSenderId: "991768865805"
+	  };
+	  firebase.initializeApp(config);
+	</script>
+	
+	<!-- Playoff bracket specific CSS/JS -->
+	<link rel="stylesheet" href="/css/bracket.css">
+	<script src="/js/bracket.js"></script>
+  </head>
+
+<body onload="updateBracket()">
+
+ <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-colour fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">Eric Duong</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarLinks" aria-controls="navbarLinks" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarLinks">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link" href="/">Home</a>
+            <a class="nav-item nav-link" href="/blog">Blog</a>
+            <a class="nav-item nav-link" href="/projects">Projects</a>
+            <a class="nav-item nav-link" href="/resume">Resume</a>
+            <a class="nav-item nav-link" href="/tools">Tools</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+	
+	<div class="container">
+		<h1 class="text-heading">Bracket Challenge</h1>
+		<div class="bracket-dropdown">
+			<span><b>Select year:</b> </span>
+			<select class="form-control" id="year" onchange="updateBracket()">
+				<option value="2018">2018 (as of Feb. 13)</option>
+				<option value="2017" selected>2017</option>
+				<option value="2016">2016</option>
+				<option value="2015">2015</option>
+			</select>
+		</div>
+		<div id='tournament'>
+			<ul class='round round-1'>
+			    <li class='spacer'>&nbsp;</li>
+				
+			    <li class='game game-top west' id='series-a1'></li>
+			    <li class='game game-spacer-left'>&nbsp;</li>
+			    <li class='game game-bottom west' id='series-a2'></li>
+
+			    <li class='spacer'>&nbsp;</li>
+				
+			    <li class='game game-top west' id='series-b1'></li>
+			    <li class='game game-spacer-left'>&nbsp;</li>
+			    <li class='game game-bottom west' id='series-b2'></li>
+
+			    <li class='spacer'>&nbsp;</li>
+				
+			    <li class='game game-top west' id='series-c1'></li>
+			    <li class='game game-spacer-left'>&nbsp;</li>
+			    <li class='game game-bottom west' id='series-c2'></li>
+
+			    <li class='spacer'>&nbsp;</li>
+				
+			    <li class='game game-top west' id='series-d1'></li>
+			    <li class='game game-spacer-left'>&nbsp;</li>
+			    <li class='game game-bottom west' id='series-d2'></li>
+
+			    <li class='spacer'>&nbsp;</li>
+			</ul>
+			<ul class='round round-2'>
+			    <li class='spacer'>&nbsp;</li>
+				
+			    <li class='game game-top west' id='series-i1'></li>
+			    <li class='game game-spacer-left'>&nbsp;</li>
+			    <li class='game game-bottom west' id='series-i2'></li>
+
+			    <li class='spacer'>&nbsp;</li>
+				
+			    <li class='game game-top west' id='series-j1'></li>
+			    <li class='game game-spacer-left'>&nbsp;</li>
+			    <li class='game game-bottom west' id='series-j2'></li>
+
+			    <li class='spacer'>&nbsp;</li>
+			</ul>
+			<ul class='round round-3'>
+			    <li class='spacer'>&nbsp;</li>
+				
+			    <li class='game game-top west' id='series-m1'></li>
+			    <li class='game game-spacer-left'>&nbsp;</li>
+			    <li class='game game-bottom west' id='series-m2'></li>
+
+			    <li class='spacer'>&nbsp;</li>
+			</ul>
+			<ul class='round round-4'>
+			    <li class='spacer'>&nbsp;</li>
+				
+			    <li class='game game-top west' id='series-o1'></li>
+			    <li class='spacer'>&nbsp;</li>
+			</ul>
+			<ul style='list-style: none'>
+			    <li>&nbsp;</li>
+			</ul>
+			<ul class='round round-4'>
+			    <li class='spacer'>&nbsp;</li>
+			    <li class='game game-top east' id='series-o2'></li>
+				
+			    <li class='spacer'>&nbsp;</li>
+			</ul>
+			<ul class='round round-3'>
+			    <li class='spacer'>&nbsp;</li>
+				
+			    <li class='game game-top east' id='series-n1'></li>
+			    <li class='game game-spacer-right'>&nbsp;</li>
+			    <li class='game game-bottom east' id='series-n2'></li>
+
+			    <li class='spacer'>&nbsp;</li>
+			</ul>
+			<ul class='round round-2'>
+			    <li class='spacer'>&nbsp;</li>
+				
+			    <li class='game game-top east' id='series-k1'></li>
+			    <li class='game game-spacer-right'>&nbsp;</li>
+			    <li class='game game-bottom east' id='series-k2'></li>
+
+			    <li class='spacer'>&nbsp;</li>
+				
+			    <li class='game game-top east' id='series-l1'></li>
+			    <li class='game game-spacer-right'>&nbsp;</li>
+			    <li class='game game-bottom east' id='series-l2'></li>
+
+			    <li class='spacer'>&nbsp;</li>
+			</ul>
+			<ul class='round round-1'>
+			    <li class='spacer'>&nbsp;</li>
+				
+			    <li class='game game-top east' id='series-e1'></li>
+			    <li class='game game-spacer-right'>&nbsp;</li>
+			    <li class='game game-bottom east' id='series-e2'></li>
+
+			    <li class='spacer'>&nbsp;</li>
+				
+			    <li class='game game-top east' id='series-f1'></li>
+			    <li class='game game-spacer-right'>&nbsp;</li>
+			    <li class='game game-bottom east' id='series-f2'></li>
+
+			    <li class='spacer'>&nbsp;</li>
+				
+			    <li class='game game-top east' id='series-g1'></li>
+			    <li class='game game-spacer-right'>&nbsp;</li>
+			    <li class='game game-bottom east' id='series-g2'></li>
+
+			    <li class='spacer'>&nbsp;</li>
+				
+			    <li class='game game-top east' id='series-h1'></li>
+			    <li class='game game-spacer-right'>&nbsp;</li>
+			    <li class='game game-bottom east' id='series-h2'></li>
+
+			    <li class='spacer'>&nbsp;</li>
+			</ul>
+		</div>
+		<h4 id="cup-champions"></h4>
+
+	</div>
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div>Website copyright 2017 - 2018 Eric Duong.</div>
+        <div><a href="/sitemap">Sitemap</a></div>
+      </div>
+    </footer>
+</body>
+
+</html>
